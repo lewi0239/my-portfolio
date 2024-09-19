@@ -1,8 +1,8 @@
 const NavBar = () => {
   return (
-    <div>
-      <nav className="flex-auto items-center justify-center">
-        <ul className="flex space-x-4">
+    <div className="bg-gray-800 p-4 border-solid">
+      <nav className="flex justify-center">
+        <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-white">
           {" "}
           {/* Apply flexbox and spacing */}
           <li>
