@@ -6,9 +6,9 @@ const NavBar = () => {
           {" "}
           {/* Apply flexbox and spacing */}
           <li>
-            <a href="/home" className="hover:text-blue-500">
+            <a href="/" className="hover:text-blue-500">
               Home
-            </a>{" "}
+            </a>
             {/* Add hover effects if needed */}
           </li>
           <li>
