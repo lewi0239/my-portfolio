@@ -1,9 +1,80 @@
+"use client"; // Add this at the top of the file to mark it as a Client Component
+
+import React, { useState } from "react";
+
 const ContactForm = () => {
+  // Define state to hold form data
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    contactMethod: "email", // Default selected option
+    subject: "",
+    message: "",
+    permission: false,
+  });
+
+  // State to handle success/error messages
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  // Handle input change
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          contactMethod: "email",
+          subject: "",
+          message: "",
+          permission: false,
+        });
+      } else {
+        setError("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      setError("An error occurred while submitting the form.");
+    }
+  };
+
   return (
     <section className="min-h-screen flex py-12 bg-gray-100">
       <div className="container mx-auto">
+        {success && (
+          <p className="text-green-500">
+            Your message has been sent successfully!
+          </p>
+        )}
+        {error && <p className="text-red-500">{error}</p>}
+
         <form
-          action="#"
+          onSubmit={handleSubmit}
           className="w-full max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg"
         >
           <fieldset className="space-y-6">
@@ -13,59 +84,65 @@ const ContactForm = () => {
 
             <div className="grid gap-6">
               {/* Full Name */}
-              <div className="form-grid__unit full">
-                <label htmlFor="fName" className="block font-semibold mb-1">
+              <div>
+                <label htmlFor="fullName" className="block font-semibold mb-1">
                   Full Name*
                 </label>
                 <input
                   type="text"
-                  id="fName"
-                  name="fName"
-                  aria-required="true"
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-gray-300 p-2 rounded-md"
                 />
               </div>
 
               {/* Email */}
-              <div className="form-grid__unit">
-                <label
-                  htmlFor="emailField"
-                  className="block font-semibold mb-1"
-                >
+              <div>
+                <label htmlFor="email" className="block font-semibold mb-1">
                   Email*
                 </label>
                 <input
                   type="email"
-                  id="emailField"
+                  id="email"
                   name="email"
-                  aria-required="true"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-gray-300 p-2 rounded-md"
                 />
               </div>
 
               {/* Phone */}
-              <div className="form-grid__unit">
-                <label htmlFor="telField" className="block font-semibold mb-1">
+              <div>
+                <label htmlFor="phone" className="block font-semibold mb-1">
                   Phone*
                 </label>
                 <input
                   type="tel"
-                  id="telField"
-                  name="tel"
-                  aria-required="true"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-gray-300 p-2 rounded-md"
                 />
               </div>
 
               {/* Preferred Contact Method */}
-              <div className="form-grid__unit full">
+              <div>
                 <p className="font-semibold">Preferred Contact Method:</p>
                 <div className="flex space-x-4">
                   <div className="flex items-center space-x-2">
                     <input
                       type="radio"
-                      name="contact-method"
                       id="contact-tel"
+                      name="contactMethod"
+                      value="phone"
+                      checked={formData.contactMethod === "phone"}
+                      onChange={handleChange}
                       className="w-5 h-5"
                     />
                     <label htmlFor="contact-tel" className="font-normal">
@@ -75,8 +152,11 @@ const ContactForm = () => {
                   <div className="flex items-center space-x-2">
                     <input
                       type="radio"
-                      name="contact-method"
                       id="contact-email"
+                      name="contactMethod"
+                      value="email"
+                      checked={formData.contactMethod === "email"}
+                      onChange={handleChange}
                       className="w-5 h-5"
                     />
                     <label htmlFor="contact-email" className="font-normal">
@@ -87,66 +167,69 @@ const ContactForm = () => {
               </div>
 
               {/* Subject */}
-              <div className="form-grid__unit full">
+              <div>
                 <label htmlFor="subject" className="block font-semibold mb-1">
                   Subject*
                 </label>
                 <select
                   id="subject"
                   name="subject"
-                  aria-required="true"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-gray-300 p-2 rounded-md"
                 >
-                  <option value="Empty" selected disabled>
-                    Please select a subject
+                  <option value="" disabled>
+                    Select a subject
                   </option>
-                  <option value="sales">Consulting</option>
-                  <option value="pricing">Front-end Design</option>
-                  <option value="support">SalesForce Admin</option>
-                  <option value="careers">General</option>
+                  <option value="consulting">Consulting</option>
+                  <option value="frontend">Front-end Design</option>
+                  <option value="salesforce">SalesForce Admin</option>
+                  <option value="general">General</option>
                 </select>
               </div>
 
               {/* Message */}
-              <div className="form-grid__unit full">
+              <div>
                 <label htmlFor="message" className="block font-semibold mb-1">
                   Message*
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  aria-required="true"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full border border-gray-300 p-2 rounded-md"
                 ></textarea>
               </div>
 
-              {/* Terms and Conditions Checkbox */}
+              {/* Consent Checkbox */}
               <div className="flex items-center space-x-2">
                 <input
                   type="checkbox"
                   id="permission"
                   name="permission"
+                  checked={formData.permission}
+                  onChange={handleChange}
                   className="w-5 h-5"
                 />
                 <label htmlFor="permission">
                   I Consent to the{" "}
-                  <a
-                    href="https://docs.google.com/document/d/1qS38_6FOYFMUXpbIRmQcwez7gkeXFa7aaVbM5MKKol8/edit?usp=sharing"
-                    className="text-blue-500 underline"
-                  >
+                  <a href="#" className="text-blue-500 underline">
                     terms & services
                   </a>
                 </label>
               </div>
 
               {/* Submit Button */}
-              <div className="btn form-grid__unit full">
-                <a
-                  href="https://docs.google.com/document/d/1kYEBid1ifrH2xo-JIA1SiaB0U7ckJ-e9m3y-BJcaAYE/edit?usp=sharing"
-                  className="block text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-700"
+              <div>
+                <button
+                  type="submit"
+                  className="block w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-700"
                 >
                   Submit
-                </a>
+                </button>
               </div>
             </div>
           </fieldset>
