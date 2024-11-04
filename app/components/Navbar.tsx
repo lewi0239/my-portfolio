@@ -17,9 +17,7 @@ const NavBar = () => {
             </a>
           </li>
           <li>
-            <a href="/contact" className="hover:text-blue-500">
-              Contact me!
-            </a>
+            <a href="/about-me">About Me!</a>
           </li>
         </ul>
       </nav>

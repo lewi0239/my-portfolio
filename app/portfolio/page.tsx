@@ -1,6 +1,7 @@
 "use client"; // Ensure this is a client component
 
 import React, { useEffect, useState } from "react";
+import ProjectCards from "@/components/ProjectCards";
 
 // Define the type for the GitHub repository data
 type GitHubRepo = {
@@ -8,6 +9,7 @@ type GitHubRepo = {
   name: string;
   description: string | null;
   html_url: string;
+  image?: string; // Optional image field if needed later
 };
 
 const Portfolio = () => {
@@ -38,29 +40,8 @@ const Portfolio = () => {
     getRepos();
   }, []);
 
-  return (
-    <div style={{ padding: "24px" }}>
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <ul>
-          {data.map((repo) => (
-            <li key={repo.id} style={{ paddingBottom: "10px" }}>
-              <h2>{repo.name}</h2>
-              <p>
-                {repo.description
-                  ? repo.description
-                  : "No description available."}
-              </p>
-              <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-                View Repo
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
+  // Pass the isLoading and data states to ProjectCards component
+  return <ProjectCards isLoading={isLoading} data={data} />;
 };
 
 export default Portfolio;
