@@ -2,6 +2,7 @@ import React from "react";
 
 type AboutMeProps = {
   name: string;
+  title: string;
   description: string;
   socials: string[];
   profileImage: string;
@@ -10,7 +11,8 @@ type AboutMeProps = {
 const AboutMe: React.FC<AboutMeProps> = ({
   profileImage = "/images/profile.jpg", // Path relative to the public directory
   name = "Brodie Lewis",
-  description = `Junior Developer | Web & Mobile Applications
+  title = "Junior Developer | Web & Mobile Applications",
+  description = `
 
 I am a Junior Developer with a strong foundation in web and mobile application development, specializing in creating responsive, user-friendly interfaces and full-stack solutions. My hands-on experience includes Progressive Web Apps (PWA), native and cross-platform mobile apps, and modern UI/UX design principles.
 
@@ -30,14 +32,13 @@ I am eager to contribute to dynamic teams and participate in impactful projects 
 }) => {
   return (
     <div>
-      {/* Use curly braces directly to reference profileImage */}
       <img src={profileImage} alt={`${name}'s profile`} />
-      <h2>{name}</h2>
+      <h1>{name}</h1>
+      <h2>{title}</h2>
       <p>{description}</p>
       <ul>
         {socials.map((social, index) => (
           <li key={index}>
-            {/* Corrected href attribute by removing the quotes */}
             <a href={social} target="_blank" rel="noopener noreferrer">
               {social}
             </a>

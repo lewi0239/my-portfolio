@@ -29,6 +29,7 @@ const Portfolio = () => {
 
       const json = await response.json();
       setData(json); // The JSON response will be an array of repositories
+      console.log(json);
     } catch (error) {
       console.error(error);
     } finally {
