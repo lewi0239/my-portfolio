@@ -14,13 +14,14 @@ type ProjectCardsProps = {
 
 const ProjectCards: React.FC<ProjectCardsProps> = ({ isLoading, data }) => {
   return (
-    <div style={{ padding: "24px" }}>
+    <div style={{ padding: "2rem" }}>
       {isLoading ? (
         <div>Loading...</div>
-      ) : (
+      ) : // Check if data is an array before mapping
+      Array.isArray(data) && data.length > 0 ? (
         <ul>
           {data.map((repo) => (
-            <li key={repo.id} style={{ paddingBottom: "10px" }}>
+            <li key={repo.id} style={{ paddingBottom: "1.6rem" }}>
               <h2>{repo.name}</h2>
               <p>
                 {repo.description
@@ -33,6 +34,8 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ isLoading, data }) => {
             </li>
           ))}
         </ul>
+      ) : (
+        <p>No repositories found.</p>
       )}
     </div>
   );

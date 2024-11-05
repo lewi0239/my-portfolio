@@ -1,11 +1,7 @@
-import Hero from "./components/Hero";
+import React from "react";
 
-const Home = () => {
-  return (
-    <>
-      <Hero></Hero>
-    </>
-  );
+const Home: React.FC = () => {
+  return <div>{/* Main content will be rendered through layout.tsx */}</div>;
 };
 
 export default Home;
