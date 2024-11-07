@@ -30,7 +30,10 @@ const Portfolio = () => {
       <ul className="space-y-4">
         {projects.length > 0 ? (
           projects.map((project, index) => (
-            <li key={index} className="bg-gray-200 p-4 rounded-lg shadow-lg">
+            <li
+              key={index}
+              className="bg-gray-200 p-4 rounded-s-full: shadow-lg"
+            >
               <h3 className="text-xl font-semibold">{project.projectName}</h3>
               <p className="mt-1 text-gray-700">{project.projectType}</p>
               <p className="mt-2">{project.projectDescription}</p>

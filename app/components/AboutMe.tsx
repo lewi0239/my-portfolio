@@ -30,7 +30,10 @@ const AboutMe: React.FC<AboutMeProps> = ({
   ],
 }) => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-8">
+    <section
+      id="about-me"
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-8"
+    >
       {/* Profile Image */}
       <img
         src={profileImage}
