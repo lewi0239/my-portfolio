@@ -27,13 +27,10 @@ const Portfolio = () => {
   return (
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-4">Portfolio Projects</h2>
-      <ul className="space-y-4">
+      <ul className="space-y-4 grid grid-cols-3">
         {projects.length > 0 ? (
           projects.map((project, index) => (
-            <li
-              key={index}
-              className="bg-gray-200 p-4 rounded-s-full: shadow-lg"
-            >
+            <li key={index} className="block max-w-sm p-6 ">
               <h3 className="text-xl font-semibold">{project.projectName}</h3>
               <p className="mt-1 text-gray-700">{project.projectType}</p>
               <p className="mt-2">{project.projectDescription}</p>
