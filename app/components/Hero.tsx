@@ -1,7 +1,7 @@
 const HeroBanner = () => {
   return (
-    <div className="bg-cover bg-center h-[90vh] flex items-center justify-center py-10">
-      <div className="max-w-screen-md text-center text-white">
+    <div className="bg-cover bg-center h-[90vh] flex items-center justify-center py-10 bg-white p-4">
+      <div className="max-w-screen-md text-center text-black">
         <div className=" flex justify-center">
           <img
             src="/images/profile.jpg"

@@ -1,34 +1,34 @@
 [
   {
     "projectName": "Chainlit LLM Integration with MongoDB",
-    "projectType": "Education",
+    "projectType": "Personal",
     "projectDescription": "Connected MongoDB backend to fine-tune a pretrained model",
     "projectLanguage": "Python",
-    "projectImage": "public/images/Chainlit-logo.png",
-    "sourceURL": ""
+    "projectImage": "images/Chainlit-logo.webp",
+    "sourceURL": "https://github.com/lewi0239/LLM-Crash-Course-Revived"
   },
   {
-    "projectName": "Portfolio Website",
-    "projectType": "Education",
-    "projectDescription": "Personal portfolio website built using Next.js and Tailwind CSS",
+    "projectName": "Tiktok Community Rep",
+    "projectType": "Personal",
+    "projectDescription": "Contribute code and content for a community Tiktok repo",
     "projectLanguage": "JavaScript",
-    "projectImage": "public/images/portfolio-logo.png",
+    "projectImage": "images/Tiktok-repo-logo.webp",
     "sourceURL": ""
   },
   {
-    "projectName": "ToDo App",
-    "projectType": "Education",
+    "projectName": "Financial Planning CaseStudy",
+    "projectType": "Personal",
     "projectDescription": "A simple to-do list app with user authentication",
-    "projectLanguage": "JavaScript",
-    "projectImage": "public/images/todo-logo.png",
+    "projectLanguage": "React, TypeScript, Python",
+    "projectImage": "images/Py-Financial-logo.webp",
     "sourceURL": ""
   },
   {
     "projectName": "React Weather Web App.",
     "projectType": "Education",
     "projectDescription": "A weather forecasting app using the OpenWeatherMap API",
-    "projectLanguage": "JavaScript",
-    "projectImage": "public/images/Weather-app-logo.png",
+    "projectLanguage": "React",
+    "projectImage": "images/React-Weather-App.webp",
     "sourceURL": "https://github.com/lewi0239/React-Weather-Application-"
   }
 ]

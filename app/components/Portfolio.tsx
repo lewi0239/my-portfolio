@@ -25,31 +25,40 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">Portfolio Projects</h2>
-      <ul className="space-y-4 grid grid-cols-3">
+    <div className="bg-white">
+      <h2 className="text-3xl font-bold mb-4 text-black">Portfolio Projects</h2>
+      <ul className="grid grid-cols-3 p-5 mb-5 gap-y-6 gap-x-4">
         {projects.length > 0 ? (
           projects.map((project, index) => (
-            <li key={index} className="block max-w-sm p-6 ">
-              <h3 className="text-xl font-semibold">{project.projectName}</h3>
-              <p className="mt-1 text-gray-700">{project.projectType}</p>
-              <p className="mt-2">{project.projectDescription}</p>
-              <p className="mt-1 text-sm text-gray-600">
-                Language: {project.projectLanguage}
-              </p>
-              <img
-                src={project.projectImage}
-                alt={`${project.projectName} logo`}
-                className="w-20 h-20 mt-4"
-              />
-              <a
-                href={project.sourceURL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:underline mt-2 inline-block"
-              >
-                View Source
-              </a>
+            <li
+              key={index}
+              className="w-96  bg-slate-100 rounded-b-lg rounded-t-lg mb-5"
+            >
+              <div className="flex justify-center">
+                <img
+                  src={project.projectImage}
+                  alt={`${project.projectName} logo`}
+                  className="w-96 mb-5 rounded-t-lg"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-sm font-semibold text-black text-wrap flex flex-grow-0">
+                  {project.projectName}
+                </h3>
+                <p className="mt-1 text-black">{project.projectType}</p>
+                <p className="mt-2 text-black">{project.projectDescription}</p>
+                <p className="mt-1 text-sm text-black">
+                  Language: {project.projectLanguage}
+                </p>
+                <a
+                  href={project.sourceURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline mb-5 inline-block"
+                >
+                  View Source
+                </a>
+              </div>
             </li>
           ))
         ) : (

@@ -34,7 +34,7 @@ const AboutMe: React.FC<AboutMeProps> = ({
   return (
     <section
       id="about-me"
-      className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-8 mb-5"
+      className="min-h-screen flex flex-col items-center justify-center bg-white"
     >
       {/* Name and Title */}
       <h1 className="flex text-3xl text-black">{title}</h1>

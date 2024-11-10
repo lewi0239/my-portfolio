@@ -41,7 +41,7 @@ export default function RootLayout({
         <Header />
 
         {/* Main Content */}
-        <main className="flex-grow">
+        <main className="">
           {/* Hero Section should be at the top */}
           <section id="hero">
             <Hero />
