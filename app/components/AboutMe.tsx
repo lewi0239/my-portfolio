@@ -3,10 +3,10 @@ import React from "react";
 import Image from "next/image";
 
 type AboutMeProps = {
-  title: string;
-  descriptionIntro: string;
-  descriptionMid: string;
-  CoreCompetencies: string[];
+  title?: string;
+  descriptionIntro?: string;
+  descriptionMid?: string;
+  CoreCompetencies?: string[];
 };
 
 const AboutMe: React.FC<AboutMeProps> = ({
@@ -30,7 +30,7 @@ const AboutMe: React.FC<AboutMeProps> = ({
 
       <div className="flex justify-center bg-slate-100 gap-y-3 m-3 rounded-xl">
         <Image
-          src="images/about-me.jpg"
+          src="/images/about-me.jpg"
           alt=""
           className="w-80 h-80 rounded-lg"
         />
@@ -44,7 +44,7 @@ const AboutMe: React.FC<AboutMeProps> = ({
           {descriptionMid}
         </p>
         <Image
-          src="images/techstack.webp"
+          src="/images/techstack.webp"
           alt="This is image shows a stack of servers"
           className="w-80 h-80"
         />
