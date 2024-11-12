@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero"; // Add Hero component here
 import AboutMe from "@/components/AboutMe";
 import Portfolio from "@/components/Portfolio";
+import BackToTop from "./components/BackToTop";
 
 // Import fonts locally using Next.js
 const geistSans = localFont({
@@ -60,6 +61,7 @@ export default function RootLayout({
 
         {/* Global Footer */}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

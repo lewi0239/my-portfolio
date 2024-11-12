@@ -1,14 +1,12 @@
 const NavBar = () => {
   return (
-    <div className="bg-gray-800 p-4 border-solid sticky top-0">
-      <p className="flex">Source for site</p>
+    <div className="bg-gray-800 border-solid p-4">
       <nav className="flex justify-center">
-        <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-white">
+        <ul className="flex align-middle flex-col md:flex-row md:space-y-0 md:space-x-6 text-white">
           <li>
             <a href="/" className="hover:text-blue-500">
               Home
             </a>
-            {/* Add hover effects if needed */}
           </li>
           <li>
             <a href="#about-me">About</a>
@@ -20,6 +18,11 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
+      <div className="flex justify-end align-top">
+        <p className="align-top bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Source for site
+        </p>
+      </div>
     </div>
   );
 };
