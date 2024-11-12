@@ -13,7 +13,7 @@
     "projectDescription": "Contribute code and content for a community Tiktok repo",
     "projectLanguage": "JavaScript",
     "projectImage": "images/Tiktok-repo-logo.webp",
-    "sourceURL": ""
+    "sourceURL": "https://github.com/nova-scotia-commie/tiktok"
   },
   {
     "projectName": "Financial Planning CaseStudy",
@@ -21,7 +21,7 @@
     "projectDescription": "A simple to-do list app with user authentication",
     "projectLanguage": "React, TypeScript, Python",
     "projectImage": "images/Py-Financial-logo.webp",
-    "sourceURL": ""
+    "sourceURL": "https://github.com/lewi0239/Financial-Planning-Case-Study"
   },
   {
     "projectName": "React Weather Web App.",
