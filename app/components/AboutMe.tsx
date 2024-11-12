@@ -11,7 +11,6 @@ type AboutMeProps = {
   descriptionIntro: string;
   descriptionMid: string;
   CoreCompetencies: string[];
-  socials: SocialLink[];
 };
 
 const AboutMe: React.FC<AboutMeProps> = ({
@@ -25,13 +24,6 @@ const AboutMe: React.FC<AboutMeProps> = ({
     " Front-End and Back-End Proficiency: Expertise in JavaScript, HTML/CSS, and mobile-specific languages.",
     "Full-Cycle Development: Collaborating with teams on the analysis, design, implementation, testing, and deployment of applications.",
   ],
-  socials = [
-    {
-      url: "https://www.linkedin.com/in/brodie-lewis/",
-      icon: "images/linkedin-logo.png",
-    },
-    { url: "https://github.com/lewi0239", icon: "images/git-logo.png" },
-  ],
 }) => {
   return (
     <section
@@ -41,7 +33,7 @@ const AboutMe: React.FC<AboutMeProps> = ({
       <h1 className="flex text-3xl text-black">{title}</h1>
 
       <div className="flex justify-center bg-slate-100 gap-y-3 m-3 rounded-xl">
-        <img
+        <Image
           src="images/about-me.jpg"
           alt=""
           className="w-80 h-80 rounded-lg"
@@ -55,7 +47,7 @@ const AboutMe: React.FC<AboutMeProps> = ({
         <p className="text-lg text-gray-700 text-center max-w-2xl whitespace-pre-line flex flex-col justify-center align-middle p-5 leading-normal">
           {descriptionMid}
         </p>
-        <img
+        <Image
           src="images/techstack.webp"
           alt="This is image shows a stack of servers"
           className="w-80 h-80"
@@ -70,23 +62,6 @@ const AboutMe: React.FC<AboutMeProps> = ({
             {item}
           </li>
         ))}
-      </ul>
-
-      <ul className="flex space-x-6 mt-6">
-        {socials.map((social, index) => (
-          <li key={index}>
-            <img src={social.icon} alt={`Brodie's (socials.icon) Socials`} />
-            <a
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
-            >
-              {social.url.includes("linkedin") ? "LinknedIn" : "Github"}
-            </a>
-          </li>
-        ))}
-        <li></li>
       </ul>
     </section>
   );

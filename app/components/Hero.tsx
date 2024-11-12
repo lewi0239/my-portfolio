@@ -3,7 +3,7 @@ const HeroBanner = () => {
     <div className="bg-cover bg-center h-[90vh] flex items-center justify-center py-10 bg-white p-4">
       <div className="max-w-screen-md text-center text-black">
         <div className=" flex justify-center">
-          <img
+          <Image
             src="/images/profile.jpg"
             alt="brodie's image"
             className="w-40 h-40 rounded-full mb-6 object-cover shadow-lg justify-center"

@@ -35,7 +35,7 @@ const Portfolio = () => {
               className="w-96  bg-slate-100 rounded-b-lg rounded-t-lg mb-5"
             >
               <div className="flex justify-center">
-                <img
+                <Image
                   src={project.projectImage}
                   alt={`${project.projectName} logo`}
                   className="w-96 mb-5 rounded-t-lg"
