@@ -1,5 +1,4 @@
 // components/AboutMe.tsx
-import { desc, li } from "framer-motion/client";
 import React from "react";
 
 type SocialLink = {
@@ -8,18 +7,14 @@ type SocialLink = {
 };
 
 type AboutMeProps = {
-  name: string;
   title: string;
   descriptionIntro: string;
   descriptionMid: string;
   CoreCompetencies: string[];
   socials: SocialLink[];
-  profileImage: string;
 };
 
 const AboutMe: React.FC<AboutMeProps> = ({
-  profileImage = "/images/profile.jpg", // Path relative to the public directory
-  name = "Brodie Lewis",
   title = "About Me!",
   descriptionIntro = "I am a Junior Developer with a strong foundation in web and mobile application development, specializing in creating responsive, user-friendly interfaces and full-stack solutions.",
   descriptionMid = "My hands-on experience includes Progressive Web Apps (PWA), native and cross-platform mobile apps, and modern UI/UX design principles. I am eager to contribute to dynamic teams and participate in impactful projects within industries like technology, healthcare, business, and education.",
