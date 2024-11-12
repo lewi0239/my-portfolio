@@ -1,3 +1,4 @@
+import Image from "next/image";
 const HeroBanner = () => {
   return (
     <div className="bg-cover bg-center h-[90vh] flex items-center justify-center py-10 bg-white p-4">

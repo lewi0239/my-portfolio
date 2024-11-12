@@ -1,5 +1,5 @@
 "use client"; // Ensure this is a client component
-
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 // Define the type for a single project

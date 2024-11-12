@@ -1,10 +1,6 @@
 // components/AboutMe.tsx
 import React from "react";
-
-type SocialLink = {
-  url: string;
-  icon: string;
-};
+import Image from "next/image";
 
 type AboutMeProps = {
   title: string;
