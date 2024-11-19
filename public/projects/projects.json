@@ -4,7 +4,7 @@
     "projectType": "Personal",
     "projectDescription": "Connected MongoDB backend to fine-tune a pretrained model",
     "projectLanguage": "Python",
-    "projectImage": "images/Chainlit-logo.webp",
+    "projectImage": "/images/Chainlit-logo.webp",
     "sourceURL": "https://github.com/lewi0239/LLM-Crash-Course-Revived"
   },
   {
@@ -12,7 +12,7 @@
     "projectType": "Personal",
     "projectDescription": "Contribute code and content for a community Tiktok repo",
     "projectLanguage": "JavaScript",
-    "projectImage": "images/Tiktok-repo-logo.webp",
+    "projectImage": "/images/Tiktok-repo-logo.webp",
     "sourceURL": "https://github.com/nova-scotia-commie/tiktok"
   },
   {
@@ -20,15 +20,15 @@
     "projectType": "Personal",
     "projectDescription": "A simple to-do list app with user authentication",
     "projectLanguage": "React, TypeScript, Python",
-    "projectImage": "images/Py-Financial-logo.webp",
+    "projectImage": "/images/Py-Financial-logo.webp",
     "sourceURL": "https://github.com/lewi0239/Financial-Planning-Case-Study"
   },
   {
     "projectName": "React Weather Web App.",
-    "projectType": "Education",
+    "projectType": "Educational",
     "projectDescription": "A weather forecasting app using the OpenWeatherMap API",
     "projectLanguage": "React",
-    "projectImage": "images/React-Weather-App.webp",
+    "projectImage": "/images/React-Weather-App.webp",
     "sourceURL": "https://github.com/lewi0239/React-Weather-Application-"
   }
 ]

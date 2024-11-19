@@ -7,7 +7,9 @@ const HeroBanner = () => {
           <Image
             src="/images/profile.jpg"
             alt="brodie's image"
-            className="w-40 h-40 rounded-full mb-6 object-cover shadow-lg justify-center"
+            width={160}
+            height={160}
+            className="rounded-full mb-6 object-cover shadow-lg justify-center"
           />
         </div>
         <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
