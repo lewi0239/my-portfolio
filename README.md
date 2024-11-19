@@ -23,7 +23,9 @@ This repository contains the source code for my personal portfolio website, show
 - **Animations**: Adding subtle animations and transitions for enhanced user experience.
 
 ## 📈 Updates
-- Coming soon.
+- Nov 18th 2024:
+   -Started adding media queries to all parent elements.
+   - 
 
 ## 🧗‍♂️ Roadblocks
 - Coming soon.
